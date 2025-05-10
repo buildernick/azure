@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import CardSquare from "@/components/CardSquare";
 import {
   AppItem,
   Hamburger,
@@ -181,114 +182,78 @@ export default function MyAccountPage() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Set up your account</h2>
             <div className={styles.cardGrid}>
-              <div className={styles.setupCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/c95e44fab5a417d6436335305c98bd048da991de?placeholderIfAbsent=true"
-                  alt="Setup"
-                  className={styles.cardImage}
-                />
-              </div>
-              <div className={styles.setupCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/5a313acb1c45f3203449f07614b2e01c5379430e?placeholderIfAbsent=true"
-                  alt="Profile"
-                  className={styles.cardImage}
-                />
-              </div>
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/c95e44fab5a417d6436335305c98bd048da991de?placeholderIfAbsent=true"
+                imageAlt="Setup"
+                variant="setup"
+                className={styles.setupCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/5a313acb1c45f3203449f07614b2e01c5379430e?placeholderIfAbsent=true"
+                imageAlt="Profile"
+                variant="setup"
+                className={styles.setupCard}
+              />
             </div>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Secure your account</h2>
             <div className={styles.cardGrid}>
-              <div className={styles.securityCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/1d7e9753f068a1fd76eb5da012ddd2d612811808?placeholderIfAbsent=true"
-                    alt="Verified ID"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>Get your Verified ID</h3>
-                  <p className={styles.cardDescription}>
-                    Use Microsoft Entra credentials to manage verified IDs for
-                    easy identity
-                  </p>
-                </div>
-              </div>
-              <div className={styles.securityCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ca5eaa2a6835de33fa2295b998ceb7b389810cef?placeholderIfAbsent=true"
-                    alt="BitLocker"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>Get your BitLocker key</h3>
-                  <p className={styles.cardDescription}>
-                    BitLocker is a Windows security feature that encrypts your
-                    drives to protect your
-                  </p>
-                </div>
-              </div>
-              <div className={styles.securityCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/f51ba09fd3c47b55c0b0abdc6a77498426973a99?placeholderIfAbsent=true"
-                    alt="Sign in"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>Change how you sign in</h3>
-                  <p className={styles.cardDescription}>
-                    Update your password or set up other ways to sign in.
-                  </p>
-                </div>
-              </div>
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/1d7e9753f068a1fd76eb5da012ddd2d612811808?placeholderIfAbsent=true"
+                imageAlt="Verified ID"
+                title="Get your Verified ID"
+                description="Use Microsoft Entra credentials to manage verified IDs for easy identity"
+                variant="security"
+                className={styles.securityCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ca5eaa2a6835de33fa2295b998ceb7b389810cef?placeholderIfAbsent=true"
+                imageAlt="BitLocker"
+                title="Get your BitLocker key"
+                description="BitLocker is a Windows security feature that encrypts your drives to protect your"
+                variant="security"
+                className={styles.securityCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/f51ba09fd3c47b55c0b0abdc6a77498426973a99?placeholderIfAbsent=true"
+                imageAlt="Sign in"
+                title="Change how you sign in"
+                description="Update your password or set up other ways to sign in."
+                variant="security"
+                className={styles.securityCard}
+              />
             </div>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Discover more</h2>
             <div className={styles.cardGrid}>
-              <div className={styles.discoveryCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/8443c64becc7eb2b4d18c86023ad9cce8724333b?placeholderIfAbsent=true"
-                    alt="Groups"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>View groups</h3>
-                  <p className={styles.cardDescription}>
-                    Manage your Microsoft 365 groups: join, create, and manage
-                    memberships.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.discoveryCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/1cc736bcd2d207b5334184d4ca3a69905ccbb5f2?placeholderIfAbsent=true"
-                    alt="Apps"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>View apps</h3>
-                  <p className={styles.cardDescription}>
-                    Manage your work or school apps and organize them into
-                    collections.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.discoveryCard}>
-                <div className={styles.cardContent}>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/bcb4e129edf64de6ab902ee1d55c43ea2eb61e76?placeholderIfAbsent=true"
-                    alt="Access"
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>View access packages</h3>
-                  <p className={styles.cardDescription}>
-                    Request and manage apps, groups, and resources.
-                  </p>
-                </div>
-              </div>
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/8443c64becc7eb2b4d18c86023ad9cce8724333b?placeholderIfAbsent=true"
+                imageAlt="Groups"
+                title="View groups"
+                description="Manage your Microsoft 365 groups: join, create, and manage memberships."
+                variant="discovery"
+                className={styles.discoveryCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/1cc736bcd2d207b5334184d4ca3a69905ccbb5f2?placeholderIfAbsent=true"
+                imageAlt="Apps"
+                title="View apps"
+                description="Manage your work or school apps and organize them into collections."
+                variant="discovery"
+                className={styles.discoveryCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/bcb4e129edf64de6ab902ee1d55c43ea2eb61e76?placeholderIfAbsent=true"
+                imageAlt="Access"
+                title="View access packages"
+                description="Request and manage apps, groups, and resources."
+                variant="discovery"
+                className={styles.discoveryCard}
+              />
             </div>
           </section>
 
@@ -298,46 +263,41 @@ export default function MyAccountPage() {
               <button className={styles.manageButton}>Manage apps</button>
             </div>
             <div className={styles.appsGrid}>
-              <div className={styles.appCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/371493c6ab83e8eaf2e291e62293fd162aef8078?placeholderIfAbsent=true"
-                  alt="Copilot"
-                  className={styles.appIcon}
-                />
-                <span className={styles.appName}>Copilot M365</span>
-              </div>
-              <div className={styles.appCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/72fd7e8d3f5759fa1f1ac716575d590a47dfa3b4?placeholderIfAbsent=true"
-                  alt="Adobe"
-                  className={styles.appIcon}
-                />
-                <span className={styles.appName}>Adobe Identity Manager</span>
-              </div>
-              <div className={styles.appCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/2889686ceaa928b2cdcd5ccc798cc0b8e8ee28f2?placeholderIfAbsent=true"
-                  alt="DocuSign"
-                  className={styles.appIcon}
-                />
-                <span className={styles.appName}>DocuSign</span>
-              </div>
-              <div className={styles.appCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ed3daa32726733a10c8e39bbe1daa4cb9a92aa1e?placeholderIfAbsent=true"
-                  alt="Dropbox"
-                  className={styles.appIcon}
-                />
-                <span className={styles.appName}>Dropbox Business</span>
-              </div>
-              <div className={styles.appCard}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/a6da422f16b3919d0fa3b0541df6d7c541cdac74?placeholderIfAbsent=true"
-                  alt="Workday"
-                  className={styles.appIcon}
-                />
-                <span className={styles.appName}>Workday</span>
-              </div>
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/371493c6ab83e8eaf2e291e62293fd162aef8078?placeholderIfAbsent=true"
+                imageAlt="Copilot"
+                title="Copilot M365"
+                variant="app"
+                className={styles.appCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/72fd7e8d3f5759fa1f1ac716575d590a47dfa3b4?placeholderIfAbsent=true"
+                imageAlt="Adobe"
+                title="Adobe Identity Manager"
+                variant="app"
+                className={styles.appCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/2889686ceaa928b2cdcd5ccc798cc0b8e8ee28f2?placeholderIfAbsent=true"
+                imageAlt="DocuSign"
+                title="DocuSign"
+                variant="app"
+                className={styles.appCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ed3daa32726733a10c8e39bbe1daa4cb9a92aa1e?placeholderIfAbsent=true"
+                imageAlt="Dropbox"
+                title="Dropbox Business"
+                variant="app"
+                className={styles.appCard}
+              />
+              <CardSquare
+                imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/a6da422f16b3919d0fa3b0541df6d7c541cdac74?placeholderIfAbsent=true"
+                imageAlt="Workday"
+                title="Workday"
+                variant="app"
+                className={styles.appCard}
+              />
             </div>
           </section>
         </div>
