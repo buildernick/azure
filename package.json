@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/dev-tools": "^1.6.45",
+    "@builder.io/react": "^8.1.2",
+    "@builder.io/sdk": "^6.0.9",
+    "@fluentui/react-components": "^9.63.0",
+    "@fluentui/react-icons": "^2.0.300",
+    "@fluentui/react-nav-preview": "^0.13.7",
+    "next": "13.5.11",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.11"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "13.5.11"
+    "eslint-config-next": "13.5.11",
+    "typescript": "^5"
   }
 }
