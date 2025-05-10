@@ -4,13 +4,9 @@ import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 
-export default function MyAppsPage() {
+export default function MyComponent() {
   return (
     <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet"
-      />
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.headerLeftSection}>
@@ -38,23 +34,23 @@ export default function MyAppsPage() {
                 </svg>
               </div>
               <div className={styles.headerDivider}>
-                <div className={styles.dividerLine} />
-                <div className={styles.myAppsTitle}>
-                  <div className={styles.myAppsText}>My Apps</div>
+                <div className={styles.dividerVertical} />
+                <div className={styles.headerTitle}>
+                  <div className={styles.titleText}>My Apps</div>
                   <div className={styles.iconFabricSmall} />
                 </div>
               </div>
             </div>
           </div>
           <div className={styles.searchBarContainer}>
-            <div className={styles.searchBar}>
+            <div>
               <svg
-                className={styles.searchBarSvg}
                 width="492"
                 height="48"
                 viewBox="0 0 492 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className={styles.searchBarSvg}
               >
                 <g filter="url(#filter0_dd_437610_398601)">
                   <path
@@ -65,24 +61,22 @@ export default function MyAppsPage() {
                   />
                 </g>
                 <text
+                  x="56"
+                  y="28.4312"
                   fill="#616161"
-                  xmlSpace="preserve"
-                  style={{ whiteSpace: "pre" }}
                   fontFamily="Open Sans"
                   fontSize="14"
                   letterSpacing="0px"
+                  style={{ whiteSpace: "pre" }}
                 >
-                  <tspan x="56" y="28.4312">
-                    Search apps
-                  </tspan>
+                  Search apps
                 </text>
                 <text
                   fill="#616161"
-                  xmlSpace="preserve"
-                  style={{ whiteSpace: "pre" }}
                   fontFamily="Fabric MDL2 Assets"
                   fontSize="16"
                   letterSpacing="0px"
+                  style={{ whiteSpace: "pre" }}
                 >
                   <tspan x="28" y="32"></tspan>
                 </text>
@@ -149,13 +143,12 @@ export default function MyAppsPage() {
             <div className={styles.headerIcon}>
               <span className={styles.iconFabric} />
             </div>
-            <Image
+            <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d849d8d95cc1eb6c99e8f22099bb15f966127b1"
               alt="Profile"
               className={styles.profileImage}
               width={32}
               height={32}
-              unoptimized
             />
           </div>
         </div>
@@ -175,20 +168,153 @@ export default function MyAppsPage() {
             </div>
             <div className={styles.actionButtons}>
               <button className={styles.actionButton}>
-                <span className={styles.actionIcon} />
-                <span className={styles.actionText}>Add apps</span>
+                <span className={styles.actionButtonIcon} />
+                <span className={styles.actionButtonText}>Add apps</span>
               </button>
               <button className={styles.actionButton}>
-                <span className={styles.actionIconBlue} />
-                <span className={styles.actionText}>Create collection</span>
+                <span className={styles.actionButtonIconBlue} />
+                <span className={styles.actionButtonText}>
+                  Create collection
+                </span>
               </button>
               <button className={styles.actionButton}>
-                <span className={styles.actionIcon} />
-                <span className={styles.actionText}>Customize view</span>
+                <span className={styles.actionButtonIcon} />
+                <span className={styles.actionButtonText}>Customize view</span>
               </button>
             </div>
           </div>
           <div className={styles.divider} />
+        </div>
+      </div>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <div className={styles.appsSectionContainer}>
+        <div className={styles.appsSectionHeader}>
+          <div className={styles.appsSectionTitle}>Productivity</div>
+          <div className={styles.settingsButtonContainer}>
+            <div className={styles.settingsButton}>
+              <i className="ti ti-settings" />
+              <div className={styles.settingsText}>Settings</div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.appsGrid}>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6fb24998524e02b72c1c34d3c3933d42371aa908"
+              alt="Outlook"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Outlook</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab06b7759c99c41bb2549c478858e86ce31d5b24"
+              alt="Teams"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Teams</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/be703ffbdfd88b565a48d6368dfc2d037efa43f3"
+              alt="PowerPoint"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>PowerPoint</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/78e9cec2e5b1eae82e495d1be3723b3bba662072"
+              alt="Adobe Identity Manager"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appNameBold}>Adobe Identity Manager</div>
+            <div className={styles.iconContainer}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html:
+                    '<svg id="I437610:398159;2577:131004" width="79" height="10" viewBox="0 0 79 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[78px] h-[10px] absolute top-[6px] right-[40px]"><path d="M1.05556 8.88889H6.61111C6.91794 8.88889 7.16667 9.13762 7.16667 9.44444C7.16667 9.71718 6.97014 9.94401 6.71097 9.99105L6.61111 10H1.05556C0.748731 10 0.5 9.75127 0.5 9.44444C0.5 9.17171 0.696528 8.94488 0.955694 8.89784L1.05556 8.88889H6.61111H1.05556ZM2.88502 2.38487C3.0779 2.19205 3.37727 2.17068 3.59376 2.32072L3.67069 2.38502L8.11344 6.82946C8.33035 7.04646 8.33029 7.39822 8.11329 7.61513C7.9204 7.80795 7.62104 7.82932 7.40454 7.67928L7.32761 7.61498L2.88487 3.17054C2.66795 2.95354 2.66802 2.60178 2.88502 2.38487ZM9.94444 0C10.2172 0 10.444 0.196528 10.491 0.455694L10.5 0.555556V6.11111C10.5 6.41794 10.2513 6.66667 9.94444 6.66667C9.67171 6.66667 9.44488 6.47014 9.39784 6.21097L9.38889 6.11111V0.555556C9.38889 0.248731 9.63762 0 9.94444 0Z" fill="#0078D4"></path></svg>',
+                }}
+              />
+            </div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/75b66589968e3012384f39f451c87d6c3e2682da"
+              alt="Atlassian Cloud"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Atlassian Cloud</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad5fcf2cd9276b890c02d307f29a680bc670fe61"
+              alt="SalesForce"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>SalesForce</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7edab1d0a3a26254199573f259c31d2e74c370b7"
+              alt="Docusign"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Docusign</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb5a2235210006241cae33ca49fc2749c9867b15"
+              alt="Dropbox Business"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Dropbox Business</div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/445486bb82673a32c218d4508bc55ad7abadfcab"
+              alt="Google Cloud / G Suite Connector"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>
+              Google Cloud / G Suite Connector
+            </div>
+          </div>
+          <div className={styles.appTile}>
+            <img
+              className={styles.appIcon}
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7325167212b8f7b3eeabca3ec5cad4408effcd47"
+              alt="Workday"
+              width={60}
+              height={60}
+            />
+            <div className={styles.appName}>Workday</div>
+          </div>
         </div>
       </div>
     </>

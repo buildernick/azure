@@ -62,13 +62,13 @@
   align-items: center;
 }
 
-.dividerLine {
+.dividerVertical {
   width: 1px;
   height: 24px;
   background-color: #616161;
 }
 
-.myAppsTitle {
+.headerTitle {
   display: flex;
   height: 48px;
   padding-left: 8px;
@@ -77,9 +77,10 @@
   padding-bottom: 12px;
   align-items: center;
   gap: 6px;
+  margin-left: 9px;
 }
 
-.myAppsText {
+.titleText {
   color: #616161;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -87,8 +88,8 @@
 }
 
 .searchBarContainer {
-  width: 492px;
   position: relative;
+  width: 492px;
 }
 
 .searchBarSvg {
@@ -156,6 +157,7 @@
 .activeTabIndicator {
   height: 2px;
   background-color: #0078d4;
+  width: 100%;
 }
 
 .tab {
@@ -183,107 +185,128 @@
   cursor: pointer;
 }
 
-.actionIcon {
+.actionButtonIcon {
   color: #0078d4;
   font-size: 16px;
   font-family: "Fabric MDL2 Assets";
 }
 
-.actionIconBlue {
+.actionButtonIconBlue {
   color: #006fc9;
   font-size: 16px;
   font-family: "Fabric MDL2 Assets";
 }
 
-.actionText {
+.actionButtonText {
   color: #323130;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
 .divider {
-  border-bottom: 1px solid #ececec;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #36363636 #36363636 #ececec;
   margin-bottom: 24px;
 }
 
-.sectionContainer {
-  margin-bottom: 32px;
-}
-
-.sectionHeader {
+/* New Apps Section */
+.appsSectionContainer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
+  width: 100%;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 1184px;
+  margin: 0 auto;
 }
 
-.sectionTitle {
+.appsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-width: 1px;
+  border-color: #ececec;
+}
+
+.appsSectionTitle {
   color: #323130;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 8px;
+  font: 600 14px/20px Open Sans;
+}
+
+.settingsButtonContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 5px 9px 9px;
 }
 
 .settingsButton {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 5px 9px 9px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
 }
 
-.settingsIcon {
-  color: #0078d4;
+.settingsButton i {
   font-size: 16px;
-  font-family: "Fabric MDL2 Assets";
+  color: #0078d4;
 }
 
 .settingsText {
   color: #323130;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font: 14px/20px Open Sans;
 }
 
 .appsGrid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  padding: 24px;
+  background-color: #fff;
 }
 
-.appCard {
+.appTile {
   display: flex;
+  width: 160.5px;
+  height: 140px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 16px 10px;
   background-color: #fff;
-  border: 1px solid #ececec;
   border-radius: 4px;
-  box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 0.3px 0.9px 0px,
-    rgba(0, 0, 0, 0.13) 0px 1.6px 3.6px 0px;
+  border: 1px solid #ececec;
+  position: relative;
 }
 
 .appIcon {
   width: 60px;
   height: 60px;
+  margin-bottom: 8px;
   border-radius: 4px;
-  margin-bottom: 10px;
   object-fit: contain;
 }
 
 .appName {
   color: #323130;
-  font-family:
-    "Open Sans",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
-  font-size: 14px;
-  font-weight: 600;
   text-align: center;
+  font:
+    14px/20px "Open Sans",
+    sans-serif;
+}
+
+.appNameBold {
+  color: #323130;
+  text-align: center;
+  font:
+    600 14px/20px "Open Sans",
+    sans-serif;
+}
+
+.iconContainer {
+  position: relative;
 }
 
 /* Media queries */
@@ -292,17 +315,13 @@
     width: 300px;
   }
 
-  .appsGrid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .content {
+    width: 100%;
   }
 }
 
 @media (max-width: 640px) {
   .searchBarContainer {
     display: none;
-  }
-
-  .appsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
