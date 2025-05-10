@@ -5,3 +5,8 @@
 - Use the Fluent Design System and themeing whenever possible.
 - Fluent design system documentation is at: https://react.fluentui.dev/?path=/docs/concepts-introduction--docs
 
+# Themeing
+- Everything should use FluentThemeProviders
+- It is defined in ThemeProvider.tsx
+- Use WebDarkTheme and WebLightTheme
+

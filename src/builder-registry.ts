@@ -6,6 +6,7 @@ import {
   NavDivider,
   NavItem,
 } from "@fluentui/react-nav-preview";
+import Tile from "./components/Tile";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -189,6 +190,38 @@ Builder.registerComponent(withChildren(NavItem), {
     },
     {
       name: "value",
+      type: "string",
+      required: true,
+    },
+  ],
+});
+
+Builder.registerComponent(Tile, {
+  name: "Tile",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "imageAlt",
+      type: "string",
+    },
+    {
+      name: "imageUrl",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "showInfoIcon",
+      type: "boolean",
+    },
+    {
+      name: "showMenuIcon",
+      type: "boolean",
+    },
+    {
+      name: "text",
       type: "string",
       required: true,
     },
