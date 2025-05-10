@@ -1,0 +1,279 @@
+.root {
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 20px;
+}
+
+.nav {
+  min-width: 200px;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.mainContent {
+  padding: 0 34px;
+}
+
+@media (max-width: 991px) {
+  .mainContent {
+    padding: 0 20px;
+  }
+}
+
+.welcomeSection {
+  margin-bottom: 36px;
+}
+
+.welcomeTitle {
+  color: #323130;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 36px;
+}
+
+.profileContainer {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.profileImage {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 240px;
+}
+
+.profileName {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.employeeInfo {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.infoColumn {
+  min-width: 240px;
+  width: 285px;
+}
+
+.infoItem {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+
+.editLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #0052b3;
+  margin-top: 4px;
+}
+
+.helpIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.sectionTitle {
+  color: #323130;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.cardGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.setupCard {
+  flex: 1;
+  min-width: 240px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+  padding: 16px;
+  min-height: 221px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.securityCard,
+.discoveryCard {
+  flex: 1;
+  min-width: 240px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.14),
+    0px 0px 2px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardImage {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #242424;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+  color: #424242;
+  line-height: 22px;
+}
+
+.appsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.manageButton {
+  min-width: 96px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242424;
+  cursor: pointer;
+}
+
+.appsGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.appCard {
+  flex: 1;
+  min-width: 240px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.appIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.appName {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242424;
+}
+
+@media (max-width: 991px) {
+  .profileContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profileInfo {
+    width: 100%;
+  }
+
+  .infoColumn {
+    width: 100%;
+  }
+
+  .cardGrid {
+    flex-direction: column;
+  }
+
+  .setupCard,
+  .securityCard,
+  .discoveryCard,
+  .appCard {
+    width: 100%;
+  }
+}

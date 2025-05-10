@@ -80,7 +80,7 @@ Builder.registerComponent(withChildren(NavCategoryItem), {
       meta: {
         ts: 'NonNullable<WithSlotShorthandValue<{ as?: "span"; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "ref"> & { ...; } & { ...; }>>',
       },
-      required: true,
+      required: false,
     },
     {
       name: "icon",

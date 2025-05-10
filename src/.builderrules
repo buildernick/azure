@@ -1,0 +1,7 @@
+# Examples
+- Always look for examples in the /src/examples folder before making anything
+
+# Design System
+- Use the Fluent Design System and themeing whenever possible.
+- Fluent design system documentation is at: https://react.fluentui.dev/?path=/docs/concepts-introduction--docs
+
