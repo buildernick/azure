@@ -4,11 +4,38 @@ import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import Tile from "@/components/Tile";
+import { 
+  Button, 
+  FluentProvider, 
+  webLightTheme,
+  webDarkTheme
+} from "@fluentui/react-components";
 
-export default function MyComponent() {
+// Separate ThemeToggle component to access the theme context
+const ThemeToggle = () => {
+  const { themeMode, toggleTheme } = useThemeContext();
+
+  return (
+    <Button
+      appearance="subtle"
+      icon={<i className={`ti ti-${themeMode === "light" ? "moon" : "sun"}`} />}
+      onClick={toggleTheme}
+      className={styles.themeToggle}
+    >
+      {themeMode === "light" ? "Dark mode" : "Light mode"}
+    </Button>
+  );
+};
+
+// Main content component to access the theme
+const MainContent = () => {
+  const { themeMode } = useThemeContext();
+  const isDark = themeMode === "dark";
+  const darkClass = isDark ? styles.darkContainer : "";
+
   return (
     <>
-      <div className={styles.container}>
+      <div className={`${styles.container} ${darkClass}`}>
         <div className={styles.header}>
           <div className={styles.headerLeftSection}>
             <div className={styles.headerLeftGroup}>
@@ -138,6 +165,7 @@ export default function MyComponent() {
             </div>
           </div>
           <div className={styles.headerRightSection}>
+            <ThemeToggle />
             <div className={styles.headerIcon}>
               <span className={styles.iconFabric} />
             </div>
@@ -195,7 +223,7 @@ export default function MyComponent() {
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet"
       />
-      <div className={styles.appsSectionContainer}>
+      <div className={`${styles.appsSectionContainer} ${darkClass}`}>
         <div className={styles.appsSectionHeader}>
           <div className={styles.appsSectionTitle}>Productivity</div>
           <div className={styles.settingsButtonContainer}>
@@ -270,7 +298,7 @@ export default function MyComponent() {
       </div>
 
       {/* FAQ Section */}
-      <div className={styles.faqContainer}>
+      <div className={`${styles.faqContainer} ${darkClass}`}>
         <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
 
         <div className={styles.faqItem}>
@@ -357,4 +385,35 @@ export default function MyComponent() {
       </div>
     </>
   );
+};
+
+// Wrap the export with FluentProvider using webLightTheme and webDarkTheme
+export default function MyComponent() {
+  const [currentTheme, setCurrentTheme] = React.useState("light");
+  
+  const toggleTheme = React.useCallback(() => {
+    setCurrentTheme(prev => prev === "light" ? "dark" : "light");
+  }, []);
+  
+  const themeContext = {
+    themeMode: currentTheme,
+    toggleTheme,
+  };
+  
+  return (
+    <FluentProvider theme={currentTheme === "light" ? webLightTheme : webDarkTheme}>
+      <ThemeContext.Provider value={themeContext}>
+        <MainContent />
+      </ThemeContext.Provider>
+    </FluentProvider>
+  );
 }
+
+// Create a context to pass theme state
+const ThemeContext = React.createContext({
+  themeMode: "light",
+  toggleTheme: () => {},
+});
+
+// Custom hook to access the theme context
+export const useThemeContext = () => React.useContext(ThemeContext);

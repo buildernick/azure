@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --color-brand-primary: var(--colorBrandForeground1);
+  --color-brand-secondary: var(--colorBrandForeground2);
+  --color-background: var(--colorNeutralBackground1);
+  --color-text-primary: var(--colorNeutralForeground1);
+  --color-text-secondary: var(--colorNeutralForeground2);
+  
+  /* Spacing */
+  --space-xs: var(--spacingHorizontalXS);
+  --space-s: var(--spacingHorizontalS);
+  --space-m: var(--spacingHorizontalM);
+  --space-l: var(--spacingHorizontalL);
+  --space-xl: var(--spacingHorizontalXL);
+  
+  /* Typography */
+  --font-size-xs: var(--fontSizeBase200);
+  --font-size-s: var(--fontSizeBase300);
+  --font-size-m: var(--fontSizeBase400);
+  --font-size-l: var(--fontSizeBase500);
+  --font-size-xl: var(--fontSizeBase600);
+  
+  /* Border Radius */
+  --radius-small: var(--borderRadiusSmall);
+  --radius-medium: var(--borderRadiusMedium);
+  --radius-large: var(--borderRadiusLarge);
+  
+  /* Elevations/Shadows */
+  --shadow-low: var(--shadow2);
+  --shadow-medium: var(--shadow8);
+  --shadow-high: var(--shadow16);
+}

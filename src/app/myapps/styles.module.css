@@ -389,3 +389,96 @@ details[open] .faqQuestion::after {
     display: none;
   }
 }
+
+/* Theme toggle button */
+.themeToggle {
+  margin-right: 8px;
+}
+
+/* Dark theme support */
+.darkContainer {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+/* Header styles */
+.darkContainer .header {
+  background-color: #292929;
+}
+
+.darkContainer .titleText,
+.darkContainer .iconFabric,
+.darkContainer .iconFabricSmall {
+  color: #e1e1e1;
+}
+
+.darkContainer .dividerVertical {
+  background-color: #555555;
+}
+
+/* Content styles */
+.darkContainer .tabText {
+  color: #e1e1e1;
+}
+
+.darkContainer .actionButtonText {
+  color: #e1e1e1;
+}
+
+.darkContainer .divider {
+  border-color: #36363636 #36363636 #444444;
+}
+
+/* Apps Section */
+.darkContainer .appsSectionContainer,
+.darkContainer.appsSectionContainer {
+  background-color: #1f1f1f;
+}
+
+.darkContainer .appsSectionHeader,
+.darkContainer.appsSectionHeader {
+  border-color: #444444;
+}
+
+.darkContainer .appsSectionTitle,
+.darkContainer.appsSectionTitle {
+  color: #e1e1e1;
+}
+
+.darkContainer .settingsText,
+.darkContainer.settingsText {
+  color: #e1e1e1;
+}
+
+.darkContainer .appsGrid,
+.darkContainer.appsGrid {
+  background-color: #1f1f1f;
+}
+
+/* FAQ Section Styles */
+.darkContainer .faqContainer,
+.darkContainer.faqContainer {
+  background-color: #1f1f1f;
+  box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.25);
+}
+
+.darkContainer .faqTitle,
+.darkContainer.faqTitle {
+  color: #e1e1e1;
+}
+
+.darkContainer .faqItem,
+.darkContainer.faqItem {
+  border-color: #444444;
+}
+
+.darkContainer .faqQuestion,
+.darkContainer.faqQuestion {
+  color: #e1e1e1;
+  background-color: #292929;
+}
+
+.darkContainer .faqAnswer,
+.darkContainer.faqAnswer {
+  color: #c8c8c8;
+}

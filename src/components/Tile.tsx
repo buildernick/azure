@@ -2,7 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import styles from "./Tile.module.css";
+import { useTheme } from "./ThemeProvider";
+import { 
+  mergeClasses, 
+  tokens,
+  useId,
+  Theme
+} from "@fluentui/react-components";
 
 export interface TileProps {
   /**
@@ -12,23 +18,11 @@ export interface TileProps {
   /**
    * Alt text for the image
    */
-  imageAlt?: string;
+  imageAlt: string;
   /**
    * Text displayed below the image
    */
   text: string;
-  /**
-   * Whether to show the info icon in the top left
-   */
-  showInfoIcon?: boolean;
-  /**
-   * Whether to show the menu dots in the top right
-   */
-  showMenuIcon?: boolean;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
   /**
    * Optional className to add to the tile container
    */
@@ -40,32 +34,81 @@ export interface TileProps {
  */
 const Tile: React.FC<TileProps> = ({
   imageUrl,
-  imageAlt = "",
+  imageAlt,
   text,
-  showInfoIcon = true,
-  showMenuIcon = true,
-  onClick,
   className = "",
 }) => {
+  const { themeMode } = useTheme();
+  const isDark = themeMode === "dark";
+  const id = useId("tile");
+
+  // Styles for the tile
+  const tileStyle: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "16px",
+    borderRadius: tokens.borderRadiusMedium,
+    cursor: "pointer",
+    transition: "all 0.2s ease",
+    backgroundColor: isDark ? "#292929" : tokens.colorNeutralBackground1,
+    border: `1px solid ${isDark ? "#444444" : tokens.colorNeutralStroke1}`,
+    boxShadow: tokens.shadow4,
+    width: "160px",
+  };
+
+  // Styles for hover state
+  const hoverStyle = {
+    boxShadow: tokens.shadow8,
+    border: `1px solid ${isDark ? "#666666" : tokens.colorNeutralStroke1Hover}`,
+  };
+
+  // Styles for the image container
+  const imageContainerStyle: React.CSSProperties = {
+    width: "48px",
+    height: "48px",
+    marginBottom: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  // Styles for the text
+  const textStyle: React.CSSProperties = {
+    fontFamily: tokens.fontFamilyBase,
+    fontSize: tokens.fontSizeBase300,
+    textAlign: "center",
+    color: isDark ? "#e1e1e1" : tokens.colorNeutralForeground1,
+    marginTop: "8px",
+    maxWidth: "100%",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  };
+
+  // Combined className
+  const tileClassName = mergeClasses(className);
+
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
-    <div className={`${styles.tileContainer} ${className}`} onClick={onClick}>
-      <div className={styles.tileContent}>
-        {showInfoIcon && <div className={styles.infoIcon}>i</div>}
-        {showMenuIcon && (
-          <div className={styles.menuIcon}>
-            <span className={styles.iconFabric}>⋮</span>
-          </div>
-        )}
-        <Image
+    <div
+      className={tileClassName}
+      style={{
+        ...tileStyle,
+        ...(isHovered ? hoverStyle : {}),
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div style={imageContainerStyle}>
+        <img
           src={imageUrl}
           alt={imageAlt}
-          width={60}
-          height={60}
-          className={styles.tileImage}
-          unoptimized
+          style={{ maxWidth: "100%", maxHeight: "100%" }}
         />
-        <div className={styles.tileText}>{text}</div>
       </div>
+      <div style={textStyle}>{text}</div>
     </div>
   );
 };
