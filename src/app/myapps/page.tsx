@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
+import Tile from "@/components/Tile";
 
 export default function MyComponent() {
   return (
@@ -205,45 +206,33 @@ export default function MyComponent() {
           </div>
         </div>
         <div className={styles.appsGrid}>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/6fb24998524e02b72c1c34d3c3933d42371aa908"
+            imageAlt="Outlook"
+            text="Outlook"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/ab06b7759c99c41bb2549c478858e86ce31d5b24"
+            imageAlt="Teams"
+            text="Teams"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/be703ffbdfd88b565a48d6368dfc2d037efa43f3"
+            imageAlt="PowerPoint"
+            text="PowerPoint"
+            className={styles.appTile}
+          />
           <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6fb24998524e02b72c1c34d3c3933d42371aa908"
-              alt="Outlook"
-              width={60}
-              height={60}
+            <Tile
+              imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/78e9cec2e5b1eae82e495d1be3723b3bba662072"
+              imageAlt="Adobe Identity Manager"
+              text="Adobe Identity Manager"
+              showInfoIcon={false}
+              showMenuIcon={false}
+              className={styles.adobeTile}
             />
-            <div className={styles.appName}>Outlook</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab06b7759c99c41bb2549c478858e86ce31d5b24"
-              alt="Teams"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>Teams</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/be703ffbdfd88b565a48d6368dfc2d037efa43f3"
-              alt="PowerPoint"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>PowerPoint</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/78e9cec2e5b1eae82e495d1be3723b3bba662072"
-              alt="Adobe Identity Manager"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appNameBold}>Adobe Identity Manager</div>
             <div className={styles.iconContainer}>
               <div
                 dangerouslySetInnerHTML={{
@@ -253,68 +242,42 @@ export default function MyComponent() {
               />
             </div>
           </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/75b66589968e3012384f39f451c87d6c3e2682da"
-              alt="Atlassian Cloud"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>Atlassian Cloud</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad5fcf2cd9276b890c02d307f29a680bc670fe61"
-              alt="SalesForce"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>SalesForce</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7edab1d0a3a26254199573f259c31d2e74c370b7"
-              alt="Docusign"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>Docusign</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb5a2235210006241cae33ca49fc2749c9867b15"
-              alt="Dropbox Business"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>Dropbox Business</div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/445486bb82673a32c218d4508bc55ad7abadfcab"
-              alt="Google Cloud / G Suite Connector"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>
-              Google Cloud / G Suite Connector
-            </div>
-          </div>
-          <div className={styles.appTile}>
-            <img
-              className={styles.appIcon}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7325167212b8f7b3eeabca3ec5cad4408effcd47"
-              alt="Workday"
-              width={60}
-              height={60}
-            />
-            <div className={styles.appName}>Workday</div>
-          </div>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/75b66589968e3012384f39f451c87d6c3e2682da"
+            imageAlt="Atlassian Cloud"
+            text="Atlassian Cloud"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/ad5fcf2cd9276b890c02d307f29a680bc670fe61"
+            imageAlt="SalesForce"
+            text="SalesForce"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/7edab1d0a3a26254199573f259c31d2e74c370b7"
+            imageAlt="Docusign"
+            text="Docusign"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/eb5a2235210006241cae33ca49fc2749c9867b15"
+            imageAlt="Dropbox Business"
+            text="Dropbox Business"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/445486bb82673a32c218d4508bc55ad7abadfcab"
+            imageAlt="Google Cloud / G Suite Connector"
+            text="Google Cloud / G Suite Connector"
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/7325167212b8f7b3eeabca3ec5cad4408effcd47"
+            imageAlt="Workday"
+            text="Workday"
+            className={styles.appTile}
+          />
         </div>
       </div>
     </>
