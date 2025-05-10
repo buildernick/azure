@@ -48,44 +48,25 @@ const Tile: React.FC<TileProps> = ({
   className = "",
 }) => {
   return (
-    <>
-      <div className={`${styles.tileContainer} ${className}`} onClick={onClick}>
-        <div
-          css={{
-            display: "flex",
-            color: "rgb(97, 97, 97)",
-            alignItems: "center",
-            justifyContent: "center",
-            left: "-6px",
-            position: "absolute",
-            top: "-6px",
-            width: "20px",
-            height: "20px",
-            borderRadius: "50%",
-            border: "1px solid #D1D1D1",
-            backgroundColor: "white",
-            fontSize: "12px",
-            fontWeight: "bold",
-            fontFamily: '"Segoe UI", sans-serif',
-          }}
-        >
-          i
-        </div>
-          )}
-          <Image
-            src={imageUrl}
-            alt={imageAlt}
-            width={60}
-            height={60}
-            className={styles.tileImage}
-            unoptimized
-          />
-          <div className={styles.tileText}>
-            {text}
+    <div className={`${styles.tileContainer} ${className}`} onClick={onClick}>
+      <div className={styles.tileContent}>
+        {showInfoIcon && <div className={styles.infoIcon}>i</div>}
+        {showMenuIcon && (
+          <div className={styles.menuIcon}>
+            <span className={styles.iconFabric}>⋮</span>
           </div>
-        </div>
+        )}
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          width={60}
+          height={60}
+          className={styles.tileImage}
+          unoptimized
+        />
+        <div className={styles.tileText}>{text}</div>
       </div>
-    </>
+    </div>
   );
 };
 
