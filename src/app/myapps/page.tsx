@@ -268,6 +268,93 @@ export default function MyComponent() {
           />
         </div>
       </div>
+
+      {/* FAQ Section */}
+      <div className={styles.faqContainer}>
+        <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+
+        <div className={styles.faqItem}>
+          <details className={styles.faqDetails}>
+            <summary className={styles.faqQuestion}>
+              How do I add a new app to my collection?
+            </summary>
+            <div className={styles.faqAnswer}>
+              <p>
+                To add a new app to your collection, click the "Add apps" button
+                in the top action bar. This will open the app catalog where you
+                can browse available apps and add them to your collection with a
+                single click.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div className={styles.faqItem}>
+          <details className={styles.faqDetails}>
+            <summary className={styles.faqQuestion}>
+              Can I organize my apps into different categories?
+            </summary>
+            <div className={styles.faqAnswer}>
+              <p>
+                Yes, you can organize your apps into collections. Click the
+                "Create collection" button in the top action bar to create a new
+                collection. Then you can drag and drop apps into your
+                collections or select multiple apps and use the "Add to
+                collection" option.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div className={styles.faqItem}>
+          <details className={styles.faqDetails}>
+            <summary className={styles.faqQuestion}>
+              What should I do if an app isn't working correctly?
+            </summary>
+            <div className={styles.faqAnswer}>
+              <p>If you're experiencing issues with an app, try these steps:</p>
+              <ol>
+                <li>Refresh your browser</li>
+                <li>Clear your browser cache</li>
+                <li>Check if the app has any updates available</li>
+                <li>Contact IT support if the issue persists</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <div className={styles.faqItem}>
+          <details className={styles.faqDetails}>
+            <summary className={styles.faqQuestion}>
+              How do I request access to a restricted app?
+            </summary>
+            <div className={styles.faqAnswer}>
+              <p>
+                To request access to a restricted app, locate the app in the
+                catalog, then click the "Request Access" button. Your request
+                will be sent to your administrator for approval. You'll receive
+                an email notification once your request has been processed.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div className={styles.faqItem}>
+          <details className={styles.faqDetails}>
+            <summary className={styles.faqQuestion}>
+              Can I customize the view of my apps page?
+            </summary>
+            <div className={styles.faqAnswer}>
+              <p>
+                Yes, you can customize the view of your apps page by clicking
+                the "Customize view" button in the top action bar. This allows
+                you to change the display format (grid or list), sort order, and
+                which information is displayed for each app.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
     </>
   );
 }
