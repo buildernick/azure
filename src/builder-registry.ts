@@ -213,11 +213,11 @@ Builder.registerComponent(Tile, {
       required: true,
     },
     {
-      name: "showInfoIcon",
+      name: "showInfo",
       type: "boolean",
     },
     {
-      name: "showMenuIcon",
+      name: "showMenu",
       type: "boolean",
     },
     {

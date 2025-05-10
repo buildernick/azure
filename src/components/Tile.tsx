@@ -3,12 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
-import { 
-  mergeClasses, 
-  tokens,
-  useId,
-  Theme
-} from "@fluentui/react-components";
+import { mergeClasses, tokens, useId, Theme } from "@fluentui/react-components";
 
 export interface TileProps {
   /**
@@ -27,6 +22,14 @@ export interface TileProps {
    * Optional className to add to the tile container
    */
   className?: string;
+  /**
+   * Show info icon in top left
+   */
+  showInfo?: boolean;
+  /**
+   * Show menu icon in top right
+   */
+  showMenu?: boolean;
 }
 
 /**
@@ -37,6 +40,8 @@ const Tile: React.FC<TileProps> = ({
   imageAlt,
   text,
   className = "",
+  showInfo,
+  showMenu,
 }) => {
   const { themeMode } = useTheme();
   const isDark = themeMode === "dark";
@@ -47,14 +52,17 @@ const Tile: React.FC<TileProps> = ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "16px",
-    borderRadius: tokens.borderRadiusMedium,
+    width: "161px",
+    height: "140px",
+    padding: "16px 10px",
+    borderRadius: "4px",
     cursor: "pointer",
     transition: "all 0.2s ease",
-    backgroundColor: isDark ? "#292929" : tokens.colorNeutralBackground1,
-    border: `1px solid ${isDark ? "#444444" : tokens.colorNeutralStroke1}`,
-    boxShadow: tokens.shadow4,
-    width: "160px",
+    backgroundColor: isDark ? "#292929" : "#FFFFFF",
+    border: `1px solid ${isDark ? "#444444" : "#ECECEC"}`,
+    boxShadow:
+      "rgba(0, 0, 0, 0.1) 0px 0.3px 0.9px 0px, rgba(0, 0, 0, 0.13) 0px 1.6px 3.6px 0px",
+    position: "relative",
   };
 
   // Styles for hover state
@@ -65,25 +73,42 @@ const Tile: React.FC<TileProps> = ({
 
   // Styles for the image container
   const imageContainerStyle: React.CSSProperties = {
-    width: "48px",
-    height: "48px",
+    width: "60px",
+    height: "60px",
     marginBottom: "8px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: "4px",
+    overflow: "hidden",
   };
 
   // Styles for the text
   const textStyle: React.CSSProperties = {
-    fontFamily: tokens.fontFamilyBase,
-    fontSize: tokens.fontSizeBase300,
+    flex: 1,
+    color: isDark ? "#e1e1e1" : "#323130",
     textAlign: "center",
-    color: isDark ? "#e1e1e1" : tokens.colorNeutralForeground1,
-    marginTop: "8px",
-    maxWidth: "100%",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
+    fontFamily: "'Open Sans', -apple-system, Roboto, Helvetica, sans-serif",
+    fontSize: "14px",
+    fontWeight: "400",
+    lineHeight: "20px",
+    height: "40px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+  };
+
+  // Styles for the icons
+  const iconStyle: React.CSSProperties = {
+    display: "flex",
+    width: "32px",
+    height: "32px",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    color: isDark ? "#e1e1e1" : "#797775",
+    fontSize: "14px",
   };
 
   // Combined className
@@ -92,24 +117,48 @@ const Tile: React.FC<TileProps> = ({
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <div
-      className={tileClassName}
-      style={{
-        ...tileStyle,
-        ...(isHovered ? hoverStyle : {}),
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div style={imageContainerStyle}>
-        <img
-          src={imageUrl}
-          alt={imageAlt}
-          style={{ maxWidth: "100%", maxHeight: "100%" }}
-        />
+    <>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+      />
+      <div
+        className={tileClassName}
+        style={{
+          ...tileStyle,
+          ...(isHovered ? hoverStyle : {}),
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {showInfo && (
+          <div style={{ ...iconStyle, left: "0px", top: "0px" }}>
+            <i className="ti ti-info-circle" />
+          </div>
+        )}
+        {showMenu && (
+          <div style={{ ...iconStyle, right: "0px", top: "0px" }}>
+            <i className="ti ti-dots-vertical" />
+          </div>
+        )}
+        <div style={imageContainerStyle}>
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+        <div style={textStyle}>{text}</div>
       </div>
-      <div style={textStyle}>{text}</div>
-    </div>
+    </>
   );
 };
 
