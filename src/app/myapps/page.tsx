@@ -224,19 +224,12 @@ export default function MyComponent() {
             text="PowerPoint"
             className={styles.appTile}
           />
-          <div className={styles.appTile}>
-            <Tile
-              imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/78e9cec2e5b1eae82e495d1be3723b3bba662072"
-              imageAlt="Adobe Identity Manager"
-              text="Adobe Identity Manager"
-              showInfoIcon={false}
-              showMenuIcon={false}
-              className={styles.adobeTile}
-            />
-            <div className={styles.iconContainer}>
-              <div />
-            </div>
-          </div>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/78e9cec2e5b1eae82e495d1be3723b3bba662072"
+            imageAlt="Adobe Identity Manager"
+            text="Adobe Identity Manager"
+            className={styles.appTile}
+          />
           <Tile
             imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/75b66589968e3012384f39f451c87d6c3e2682da"
             imageAlt="Atlassian Cloud"
