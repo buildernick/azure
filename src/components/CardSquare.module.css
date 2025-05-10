@@ -1,0 +1,101 @@
+.cardBase {
+  flex: 1;
+  min-width: 240px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.14),
+    0px 0px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cardSetup {
+  padding: 16px;
+  min-height: 221px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+}
+
+.cardSecurity,
+.cardDiscovery {
+  padding: 12px;
+}
+
+.cardApp {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow:
+    0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardImage {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #242424;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+  color: #424242;
+  line-height: 22px;
+}
+
+.appIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.appName {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242424;
+}
+
+@media (max-width: 991px) {
+  .cardBase {
+    width: 100%;
+  }
+}
