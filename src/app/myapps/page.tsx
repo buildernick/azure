@@ -2,18 +2,13 @@
 
 import React from "react";
 import styles from "./styles.module.css";
-import Image from "next/image";
 import Tile from "@/components/Tile";
-import { 
-  Button, 
-  FluentProvider, 
-  webLightTheme,
-  webDarkTheme
-} from "@fluentui/react-components";
+import { Button } from "@fluentui/react-components";
+import { useTheme } from '@/theme/ThemeProvider';
 
 // Separate ThemeToggle component to access the theme context
 const ThemeToggle = () => {
-  const { themeMode, toggleTheme } = useThemeContext();
+  const { themeMode, toggleTheme } = useTheme();
 
   return (
     <Button
@@ -29,7 +24,7 @@ const ThemeToggle = () => {
 
 // Main content component to access the theme
 const MainContent = () => {
-  const { themeMode } = useThemeContext();
+  const { themeMode } = useTheme();
   const isDark = themeMode === "dark";
   const darkClass = isDark ? styles.darkContainer : "";
 
@@ -387,33 +382,7 @@ const MainContent = () => {
   );
 };
 
-// Wrap the export with FluentProvider using webLightTheme and webDarkTheme
-export default function MyComponent() {
-  const [currentTheme, setCurrentTheme] = React.useState("light");
-  
-  const toggleTheme = React.useCallback(() => {
-    setCurrentTheme(prev => prev === "light" ? "dark" : "light");
-  }, []);
-  
-  const themeContext = {
-    themeMode: currentTheme,
-    toggleTheme,
-  };
-  
-  return (
-    <FluentProvider theme={currentTheme === "light" ? webLightTheme : webDarkTheme}>
-      <ThemeContext.Provider value={themeContext}>
-        <MainContent />
-      </ThemeContext.Provider>
-    </FluentProvider>
-  );
+// Use the global theme provider instead of creating a local one
+export default function MyApps() {
+  return <MainContent />;
 }
-
-// Create a context to pass theme state
-const ThemeContext = React.createContext({
-  themeMode: "light",
-  toggleTheme: () => {},
-});
-
-// Custom hook to access the theme context
-export const useThemeContext = () => React.useContext(ThemeContext);

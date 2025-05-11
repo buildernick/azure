@@ -1,46 +1,70 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { FluentProvider } from '@fluentui/react-components';
-import { designTokens, azureLightTheme, azureDarkTheme } from './designTokens';
+"use client";
 
-type ThemeContextType = {
-  isDarkMode: boolean;
+import { ReactNode, createContext, useContext, useState, useEffect } from "react";
+import {
+  FluentProvider,
+  webLightTheme,
+  webDarkTheme,
+  Theme,
+  SSRProvider,
+} from "@fluentui/react-components";
+
+type ThemeMode = "light" | "dark";
+
+interface ThemeContextType {
+  themeMode: ThemeMode;
   toggleTheme: () => void;
-};
+  setThemeMode: (mode: ThemeMode) => void;
+}
 
 const ThemeContext = createContext<ThemeContextType>({
-  isDarkMode: false,
+  themeMode: "light",
   toggleTheme: () => {},
+  setThemeMode: () => {},
 });
 
 export const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+interface ThemeProviderProps {
+  children: ReactNode;
+  defaultTheme?: ThemeMode;
+}
+
+export const FluentThemeProvider = ({
+  children,
+  defaultTheme = "light",
+}: ThemeProviderProps) => {
+  const [themeMode, setThemeMode] = useState<ThemeMode>(defaultTheme);
   
-  // Check system preference
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(prefersDark);
-    
-    // Update designTokens.current
-    designTokens.current = prefersDark ? azureDarkTheme : azureLightTheme;
+    // Check for saved preference
+    const savedTheme = localStorage.getItem("themeMode") as ThemeMode;
+    if (savedTheme) {
+      setThemeMode(savedTheme);
+    } else {
+      // Check system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        setThemeMode("dark");
+      }
+    }
   }, []);
-  
+
   const toggleTheme = () => {
-    setIsDarkMode(prev => {
-      const newMode = !prev;
-      designTokens.current = newMode ? azureDarkTheme : azureLightTheme;
-      return newMode;
-    });
+    const newTheme = themeMode === "light" ? "dark" : "light";
+    setThemeMode(newTheme);
+    localStorage.setItem("themeMode", newTheme);
   };
-  
+
+  const theme = themeMode === "light" ? webLightTheme : webDarkTheme;
+
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      <FluentProvider theme={isDarkMode ? azureDarkTheme : azureLightTheme}>
-        {children}
-      </FluentProvider>
+    <ThemeContext.Provider value={{ themeMode, toggleTheme, setThemeMode }}>
+      <SSRProvider>
+        <FluentProvider theme={theme}>{children}</FluentProvider>
+      </SSRProvider>
     </ThemeContext.Provider>
   );
 };
 
-export default ThemeProvider;
+export default FluentThemeProvider;

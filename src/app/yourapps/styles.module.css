@@ -1,0 +1,310 @@
+.root {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.darkContainer {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.header {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 20px;
+  color: #616161;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f3f2f1;
+  padding: 0 16px;
+}
+
+.headerLeftSection {
+  display: flex;
+  align-items: stretch;
+  gap: 40px 100px;
+  flex-wrap: wrap;
+}
+
+.headerLeftGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconFabric {
+  font-family:
+    "Fabric MDL2 Assets",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.microsoftLogo {
+  width: 108px;
+  height: 24px;
+}
+
+.headerDivider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dividerVertical {
+  width: 1px;
+  height: 24px;
+  background-color: #616161;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.titleText {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.searchBarContainer {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchBar {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+  display: flex;
+  padding: 6px 16px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 492px;
+}
+
+.searchIcon {
+  font-family: "Fabric MDL2 Assets";
+  font-size: 16px;
+}
+
+.searchText {
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: #616161;
+}
+
+.headerRightSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.navigationSection {
+  display: flex;
+  margin-top: 21px;
+  width: 1184px;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.tabsContainer {
+  display: flex;
+  min-width: 240px;
+  flex: 1;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tab {
+  padding: 12px 4px;
+  color: #323130;
+  font-family: "Open Sans";
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.activeTab {
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.activeIndicator {
+  height: 2px;
+  background-color: #0078d4;
+  margin-top: 8px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #323130;
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.buttonIcon {
+  color: #0078d4;
+  font-family: "Fabric MDL2 Assets";
+  font-size: 16px;
+  width: 16px;
+}
+
+.buttonIconBlue {
+  composes: buttonIcon;
+  color: #006fc9;
+}
+
+.contentSection {
+  margin-top: 21px;
+  width: 1184px;
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+.drawer {
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.darkContainer .drawer {
+  background-color: #2d2d2d;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #ececec;
+}
+
+.drawerTitle {
+  color: #323130;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.darkContainer .drawerTitle {
+  color: #fff;
+}
+
+.settingsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.settingsIcon {
+  color: #0078d4;
+  font-family: "Fabric MDL2 Assets";
+  font-size: 16px;
+}
+
+.settingsText {
+  color: #323130;
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.darkContainer .settingsText {
+  color: #fff;
+}
+
+.drawerContent {
+  padding: 24px;
+}
+
+.tileGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.themeToggle {
+  margin-right: 8px;
+}
+
+@media (max-width: 991px) {
+  .navigationSection,
+  .contentSection {
+    width: 100%;
+  }
+
+  .headerLeftSection {
+    gap: 20px;
+  }
+
+  .searchBarContainer {
+    width: 100%;
+  }
+
+  .actionButtons {
+    flex-wrap: wrap;
+  }
+
+  .tileGrid {
+    justify-content: center;
+  }
+}

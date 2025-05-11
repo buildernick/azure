@@ -6,8 +6,7 @@
 - Fluent design system documentation is at: https://react.fluentui.dev/?path=/docs/concepts-introduction--docs
 
 # Themeing
-- Everything should use FluentThemeProviders
-- It is defined in ThemeProvider.tsx
+- Everything should use the theme provider at import { useTheme, FluentThemeProvider } from '@/theme/ThemeProvider';
 - Use WebDarkTheme and WebLightTheme from Fluent for all themeing
-- When creating new pages or components always give them light and dark mode ability.  For new pages, build a Dark/Light Mode toggle at the top of the page. There's an example on the /myapps page
+- For everything that is built incorporate this themeing
 

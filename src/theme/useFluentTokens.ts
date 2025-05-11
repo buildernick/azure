@@ -1,33 +1,33 @@
 import { tokens } from '@fluentui/tokens';
-import { useTheme } from './ThemeProvider';
-import designTokens from './designTokens';
+// Use this import everywhere
+import { useTheme, FluentThemeProvider } from '@/theme/ThemeProvider';
 
 // This hook provides access to all design tokens and current theme
 export const useFluentTokens = () => {
-  const { isDarkMode } = useTheme();
-  const currentTheme = isDarkMode ? designTokens.dark : designTokens.light;
+  const { themeMode } = useTheme();
+  const isDarkMode = themeMode === 'dark';
   
   return {
     colors: {
       brand: {
-        primary: currentTheme.colorBrandForeground1,
-        secondary: currentTheme.colorBrandForeground2,
+        primary: tokens.colorBrandForeground1,
+        secondary: tokens.colorBrandForeground2,
       },
       background: {
-        default: currentTheme.colorNeutralBackground1,
-        subtle: currentTheme.colorNeutralBackground2,
-        emphasized: currentTheme.colorNeutralBackground3,
+        default: tokens.colorNeutralBackground1,
+        subtle: tokens.colorNeutralBackground2,
+        emphasized: tokens.colorNeutralBackground3,
       },
       text: {
-        primary: currentTheme.colorNeutralForeground1,
-        secondary: currentTheme.colorNeutralForeground2,
-        disabled: currentTheme.colorNeutralForegroundDisabled,
+        primary: tokens.colorNeutralForeground1,
+        secondary: tokens.colorNeutralForeground2,
+        disabled: tokens.colorNeutralForegroundDisabled,
       },
       status: {
-        success: currentTheme.colorStatusSuccess,
-        warning: currentTheme.colorStatusWarning,
-        danger: currentTheme.colorStatusDanger,
-        info: currentTheme.colorStatusInfo,
+        success: tokens.colorStatusSuccess,
+        warning: tokens.colorStatusWarning,
+        danger: tokens.colorStatusDanger,
+        info: tokens.colorStatusInfo,
       },
     },
     spacing: {
@@ -70,6 +70,7 @@ export const useFluentTokens = () => {
         decelerate: tokens.curveDecelerate,
       },
     },
+    isDarkMode,
   };
 };
 

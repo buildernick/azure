@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { FluentThemeProvider } from '../../ThemeProvider'
+import { useTheme, FluentThemeProvider } from '@/theme/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {

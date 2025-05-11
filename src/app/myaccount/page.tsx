@@ -19,6 +19,7 @@ import {
 } from "@fluentui/react-nav-preview";
 import { PersonCircle32Regular } from "@fluentui/react-icons";
 import { DrawerProps, Tooltip } from "@fluentui/react-components";
+import { useTheme } from "@/theme/ThemeProvider";
 import styles from "./styles.module.css";
 
 type DrawerType = Required<DrawerProps>["type"];
@@ -26,6 +27,9 @@ type DrawerType = Required<DrawerProps>["type"];
 export default function MyAccountPage() {
   const [isOpen, setIsOpen] = React.useState(true);
   const [type] = React.useState<DrawerType>("inline");
+  const { themeMode } = useTheme();
+
+  const isDark = themeMode === "dark";
 
   return (
     <div className={styles.root}>
