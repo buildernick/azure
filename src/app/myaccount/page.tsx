@@ -18,11 +18,27 @@ import {
   NavSubItemGroup,
 } from "@fluentui/react-nav-preview";
 import { PersonCircle32Regular } from "@fluentui/react-icons";
-import { DrawerProps, Tooltip } from "@fluentui/react-components";
+import { Button, DrawerProps, Tooltip } from "@fluentui/react-components";
 import { useTheme } from "@/theme/ThemeProvider";
 import styles from "./styles.module.css";
 
 type DrawerType = Required<DrawerProps>["type"];
+
+// Theme toggle component for light/dark mode switching
+const ThemeToggle = () => {
+  const { themeMode, toggleTheme } = useTheme();
+
+  return (
+    <Button
+      appearance="subtle"
+      icon={<i className={`ti ti-${themeMode === "light" ? "moon" : "sun"}`} />}
+      onClick={toggleTheme}
+      className={styles.themeToggle}
+    >
+      {themeMode === "light" ? "Dark mode" : "Light mode"}
+    </Button>
+  );
+};
 
 export default function MyAccountPage() {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -30,9 +46,10 @@ export default function MyAccountPage() {
   const { themeMode } = useTheme();
 
   const isDark = themeMode === "dark";
+  const darkClass = isDark ? styles.darkContainer : "";
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${darkClass}`}>
       <NavDrawer
         defaultSelectedValue="2"
         defaultSelectedCategoryValue=""
@@ -139,11 +156,16 @@ export default function MyAccountPage() {
         </NavDrawerBody>
       </NavDrawer>
 
-      <div className={styles.content}>
+      <div className={`${styles.content} ${darkClass}`}>
         <div className={styles.header}>
-          <Tooltip content="Toggle navigation pane" relationship="label">
-            <Hamburger onClick={() => setIsOpen(!isOpen)} />
-          </Tooltip>
+          <div className={styles.headerLeft}>
+            <Tooltip content="Toggle navigation pane" relationship="label">
+              <Hamburger onClick={() => setIsOpen(!isOpen)} />
+            </Tooltip>
+          </div>
+          <div className={styles.headerRight}>
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className={styles.mainContent}>
@@ -306,6 +328,14 @@ export default function MyAccountPage() {
           </section>
         </div>
       </div>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
     </div>
   );
 }
