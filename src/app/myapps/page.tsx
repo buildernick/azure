@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import Tile from "@/components/Tile";
 import { Button } from "@fluentui/react-components";
-import { useTheme } from '@/theme/ThemeProvider';
+import { useTheme } from "@/theme/ThemeProvider";
 
 // Separate ThemeToggle component to access the theme context
 const ThemeToggle = () => {
@@ -292,90 +292,195 @@ const MainContent = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <div className={`${styles.faqContainer} ${darkClass}`}>
-        <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
-
-        <div className={styles.faqItem}>
-          <details className={styles.faqDetails}>
-            <summary className={styles.faqQuestion}>
-              How do I add a new app to my collection?
-            </summary>
-            <div className={styles.faqAnswer}>
-              <p>
-                To add a new app to your collection, click the "Add apps" button
-                in the top action bar. This will open the app catalog where you
-                can browse available apps and add them to your collection with a
-                single click.
-              </p>
+      {/* Design and User Experience Section */}
+      <div className={`${styles.appsSectionContainer} ${darkClass}`}>
+        <div className={styles.appsSectionHeader}>
+          <div className={styles.appsSectionTitle}>
+            Design and user experience
+          </div>
+          <div className={styles.settingsButtonContainer}>
+            <div className={styles.settingsButton}>
+              <i className="ti ti-settings" />
+              <div className={styles.settingsText}>Settings</div>
             </div>
-          </details>
+          </div>
         </div>
-
-        <div className={styles.faqItem}>
-          <details className={styles.faqDetails}>
-            <summary className={styles.faqQuestion}>
-              Can I organize my apps into different categories?
-            </summary>
-            <div className={styles.faqAnswer}>
-              <p>
-                Yes, you can organize your apps into collections. Click the
-                "Create collection" button in the top action bar to create a new
-                collection. Then you can drag and drop apps into your
-                collections or select multiple apps and use the "Add to
-                collection" option.
-              </p>
-            </div>
-          </details>
+        <div className={styles.appsGrid}>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6a196e0a6c0c331c314273317119bb70e7c2eff0?placeholderIfAbsent=true"
+            imageAlt="Figma"
+            text="Figma"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/b44422b9b98e257903bf66006cd05217d9566239?placeholderIfAbsent=true"
+            imageAlt="Adobe XD"
+            text="Adobe XD"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/86fac6fa069323b0e462e9d499952bdef41c0a10?placeholderIfAbsent=true"
+            imageAlt="Sketch"
+            text="Sketch"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/c96ee85f8732b01659a5fa51f48645f7be8ebbec?placeholderIfAbsent=true"
+            imageAlt="InVision"
+            text="InVision"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/bd82cfb8dce35549f3454d15ea8401e095592869?placeholderIfAbsent=true"
+            imageAlt="Zeplin"
+            text="Zeplin"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
         </div>
+      </div>
 
-        <div className={styles.faqItem}>
-          <details className={styles.faqDetails}>
-            <summary className={styles.faqQuestion}>
-              What should I do if an app isn't working correctly?
-            </summary>
-            <div className={styles.faqAnswer}>
-              <p>If you're experiencing issues with an app, try these steps:</p>
-              <ol>
-                <li>Refresh your browser</li>
-                <li>Clear your browser cache</li>
-                <li>Check if the app has any updates available</li>
-                <li>Contact IT support if the issue persists</li>
-              </ol>
+      {/* App Library Section */}
+      <div className={`${styles.appsSectionContainer} ${darkClass}`}>
+        <div className={styles.appsSectionHeader}>
+          <div className={styles.appsSectionTitle}>App library</div>
+          <div className={styles.settingsButtonContainer}>
+            <div className={styles.settingsButton}>
+              <i className="ti ti-settings" />
+              <div className={styles.settingsText}>Settings</div>
             </div>
-          </details>
+          </div>
         </div>
-
-        <div className={styles.faqItem}>
-          <details className={styles.faqDetails}>
-            <summary className={styles.faqQuestion}>
-              How do I request access to a restricted app?
-            </summary>
-            <div className={styles.faqAnswer}>
-              <p>
-                To request access to a restricted app, locate the app in the
-                catalog, then click the "Request Access" button. Your request
-                will be sent to your administrator for approval. You'll receive
-                an email notification once your request has been processed.
-              </p>
-            </div>
-          </details>
-        </div>
-
-        <div className={styles.faqItem}>
-          <details className={styles.faqDetails}>
-            <summary className={styles.faqQuestion}>
-              Can I customize the view of my apps page?
-            </summary>
-            <div className={styles.faqAnswer}>
-              <p>
-                Yes, you can customize the view of your apps page by clicking
-                the "Customize view" button in the top action bar. This allows
-                you to change the display format (grid or list), sort order, and
-                which information is displayed for each app.
-              </p>
-            </div>
-          </details>
+        <div className={styles.appsGrid}>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/8586dac3f51d21799453554910a6210202f683e8?placeholderIfAbsent=true"
+            imageAlt="Excel"
+            text="Excel"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6435efcdae4c7a10d1d53faf124ed34832eeeff1?placeholderIfAbsent=true"
+            imageAlt="Adobe Identity Manager"
+            text="Adobe Identity Manager"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ab839e9daa4bfd004b7f480c4c13425607464211?placeholderIfAbsent=true"
+            imageAlt="Adobe Creative Cloud"
+            text="Adobe Creative Cloud"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/4d60e12ef214b692a9bdfe08537560bdf843ccae?placeholderIfAbsent=true"
+            imageAlt="Slack"
+            text="Slack"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/27076ac9b393ca4da9502d3cedb90bdbbe06bf65?placeholderIfAbsent=true"
+            imageAlt="Google Drive"
+            text="Google Drive"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/7750db64b26e644cedf512db9d8dffcb0dd21891?placeholderIfAbsent=true"
+            imageAlt="SharePoint"
+            text="SharePoint"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/51c7c83a26855cda081581322586a95d4a9908a1?placeholderIfAbsent=true"
+            imageAlt="OneDrive"
+            text="OneDrive"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/44f34e51eae7f0af0c727c1fe45300c7f6dc3981?placeholderIfAbsent=true"
+            imageAlt="Dropbox Business"
+            text="Dropbox Business"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/cfea527b7fe5f6f0803c7d4dd01e856ac40c7113?placeholderIfAbsent=true"
+            imageAlt="Asana"
+            text="Asana"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/aa67f1cb5926c5cd81a8001769ae292cbcf973d8?placeholderIfAbsent=true"
+            imageAlt="Trello"
+            text="Trello"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/43d8a1a56d1035301e590e3d1a14055fd2afeb94?placeholderIfAbsent=true"
+            imageAlt="Zoom"
+            text="Zoom"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ff2e3579c5d6f4c2015486ee4b0518659254ae5c?placeholderIfAbsent=true"
+            imageAlt="Adobe Acrobat"
+            text="Adobe Acrobat"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/e398bc402a598123a4e0ab658a6cf07033a6ffaf?placeholderIfAbsent=true"
+            imageAlt="Power BI"
+            text="Power BI"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6bd78e80bca1e0bf38f7c0cbd9f1aaaa84edb637?placeholderIfAbsent=true"
+            imageAlt="Power Apps"
+            text="Power Apps"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/dfc89189c8fb4319d632e3f1efb0e026925245d7?placeholderIfAbsent=true"
+            imageAlt="Power Automate"
+            text="Power Automate"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
         </div>
       </div>
     </>
