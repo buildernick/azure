@@ -291,6 +291,63 @@ const MainContent = () => {
           />
         </div>
       </div>
+
+      {/* Design and User Experience Section */}
+      <div className={`${styles.appsSectionContainer} ${darkClass}`}>
+        <div className={styles.appsSectionHeader}>
+          <div className={styles.appsSectionTitle}>
+            Design and user experience
+          </div>
+          <div className={styles.settingsButtonContainer}>
+            <div className={styles.settingsButton}>
+              <i className="ti ti-settings" />
+              <div className={styles.settingsText}>Settings</div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.appsGrid}>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6a196e0a6c0c331c314273317119bb70e7c2eff0?placeholderIfAbsent=true"
+            imageAlt="Figma"
+            text="Figma"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/b44422b9b98e257903bf66006cd05217d9566239?placeholderIfAbsent=true"
+            imageAlt="Adobe XD"
+            text="Adobe XD"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/86fac6fa069323b0e462e9d499952bdef41c0a10?placeholderIfAbsent=true"
+            imageAlt="Sketch"
+            text="Sketch"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/c96ee85f8732b01659a5fa51f48645f7be8ebbec?placeholderIfAbsent=true"
+            imageAlt="InVision"
+            text="InVision"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/bd82cfb8dce35549f3454d15ea8401e095592869?placeholderIfAbsent=true"
+            imageAlt="Zeplin"
+            text="Zeplin"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+        </div>
+      </div>
     </>
   );
 };
