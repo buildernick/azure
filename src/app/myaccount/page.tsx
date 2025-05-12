@@ -210,25 +210,24 @@ export default function MyAccountPage() {
             <h2 className={styles.sectionTitle}>Set up your account</h2>
             <div className={styles.wideCardGrid}>
               <CardWide
-                buttonText="Create a Passkey"
                 titleText="Set up multi-factor authentication"
                 bodyText="Create a passkey, Microsoft authenticator, etc. or ............."
                 imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ab9a3d3cd1d5ece12c84f5d1608dae18093a29ed?placeholderIfAbsent=true"
                 imageAlt="Set up multi-factor authentication"
                 variant="info"
-                imagePosition="left"
-                showButton={true}
+                imagePosition="right"
+                showBarIcon={false}
+                showButton={false}
               />
               <CardWide
-                buttonText="Create a Passkey"
                 titleText="Set up multi-factor authentication"
                 bodyText="Create a passkey, Microsoft authenticator, etc. or ............."
                 imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/5a313acb1c45f3203449f07614b2e01c5379430e?placeholderIfAbsent=true"
                 imageAlt="Set up multi-factor authentication"
                 variant="info"
-                imagePosition="left"
-                showBarIcon={true}
-                showButton={true}
+                imagePosition="right"
+                showBarIcon={false}
+                showButton={false}
               />
             </div>
           </section>
