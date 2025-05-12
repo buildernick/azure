@@ -1,89 +1,82 @@
 .container {
   display: flex;
-  width: 100%;
-  max-width: 513px;
+  width: 513px;
   height: 221px;
   align-items: flex-start;
-  gap: -4px;
+  gap: 13px;
+  background-color: #fff;
   box-shadow:
     0px 0.3px 0.9px 0px rgba(0, 0, 0, 0.1),
     0px 1.6px 3.6px 0px rgba(0, 0, 0, 0.13);
 }
 
-.container.dark {
-  background-color: var(--colorNeutralBackground2);
+.containerNoBar {
+  width: 450px;
+  gap: 0;
+}
+
+.darkContainer {
+  background-color: var(--colorNeutralBackground1);
   color: var(--colorNeutralForeground1);
 }
 
-.barContainer {
+.sidebarContainer {
   display: flex;
   align-items: center;
   gap: -4px;
   height: 100%;
-  border-radius: 4px;
-  background-color: #fff;
   position: relative;
 }
 
-.dark .barContainer {
-  background-color: var(--colorNeutralBackground2);
-}
-
-.bar {
+.sidebarIcon {
   height: 100%;
-  color: #de590b;
 }
 
 .iconContainer {
   display: flex;
-  padding: 24px;
+  padding: 0px 24px;
   justify-content: center;
   align-items: center;
   gap: 8px;
   height: 100%;
-  background-color: #fff5f0;
-  position: relative;
-}
-
-.dark .iconContainer {
-  background-color: rgba(222, 89, 11, 0.1);
-  color: #de590b;
+  background-color: #fff8f6;
 }
 
 .content {
   display: flex;
-  height: 221px;
-  padding: 16px;
-  flex-direction: column;
+  width: 417px;
+  padding: 10px 0px;
   align-items: flex-start;
-  gap: 16px;
+  gap: 15px;
   flex: 1;
-  border-radius: 4px;
   background-color: #fff;
 }
 
-.dark .content {
-  background-color: var(--colorNeutralBackground2);
+.contentNoBar {
+  width: 100%;
+  padding: 16px;
 }
 
-.contentWrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
+.contentleft {
+  flex-direction: row;
+}
+
+.contentright {
+  flex-direction: row-reverse;
+}
+
+.darkContainer .content {
+  background-color: var(--colorNeutralBackground1);
 }
 
 .imageContainer {
   display: flex;
   width: 189px;
-  height: 171px;
+  height: 189px;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   position: relative;
-}
-
-.imageRight {
-  order: 2;
 }
 
 .image {
@@ -92,16 +85,15 @@
   object-fit: contain;
 }
 
-.textContainer {
+.textContent {
   display: flex;
-  height: 171px;
   flex-direction: column;
   align-items: flex-start;
   gap: 36px;
   flex: 1;
 }
 
-.textContent {
+.textWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -109,17 +101,16 @@
   width: 100%;
 }
 
-.headline {
+.title {
   width: 100%;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 22px;
   color: #242424;
-  margin: 0;
 }
 
-.dark .headline {
+.darkContainer .title {
   color: var(--colorNeutralForeground1);
 }
 
@@ -130,10 +121,9 @@
   font-weight: 400;
   line-height: 20px;
   color: #242424;
-  margin: 0;
 }
 
-.dark .body {
+.darkContainer .body {
   color: var(--colorNeutralForeground1);
 }
 
@@ -143,57 +133,73 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #242424;
   background-color: #fff;
   cursor: pointer;
+  transition:
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.darkContainer .button {
+  background-color: var(--colorNeutralBackground1);
+  border-color: var(--colorNeutralStroke1);
+  color: var(--colorNeutralForeground1);
+}
+
+.buttonText {
   font-family: "Segoe UI", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: #242424;
+  padding-bottom: 2px;
 }
 
-.dark .button {
-  background-color: var(--colorNeutralBackground2);
-  border-color: var(--colorNeutralStroke1);
+.darkContainer .buttonText {
   color: var(--colorNeutralForeground1);
 }
 
-.button:hover {
-  background-color: var(--colorNeutralBackground1Hover);
-}
-
-@media (max-width: 640px) {
+@media (max-width: 991px) {
   .container {
+    width: 100%;
     flex-direction: column;
     height: auto;
   }
 
-  .barContainer {
-    height: 4px;
-    width: 100%;
-  }
-
-  .iconContainer {
-    display: none;
-  }
-
   .content {
-    height: auto;
-    border-radius: 4px;
+    width: 100%;
+    padding: 16px;
   }
 
-  .contentWrapper {
+  .imageContainer {
+    width: 140px;
+    height: 140px;
+  }
+
+  .textContent {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 8px;
+  }
+
+  .content,
+  .contentleft,
+  .contentright {
     flex-direction: column;
   }
 
   .imageContainer {
     width: 100%;
-    height: 120px;
+    height: 160px;
   }
 
-  .textContainer {
-    height: auto;
-    gap: 24px;
+  .textContent {
+    gap: 16px;
   }
 }

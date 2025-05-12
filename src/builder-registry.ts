@@ -6,7 +6,7 @@ import {
   NavDivider,
   NavItem,
 } from "@fluentui/react-nav-preview";
-import CardWide from "./components/CardWide";
+import { CardWide } from "./components/CardWide";
 import Tile from "./components/Tile";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -242,18 +242,8 @@ Builder.registerComponent(CardWide, {
       type: "string",
     },
     {
-      name: "className",
-      type: "string",
-    },
-    {
-      name: "headlineText",
-      type: "string",
-      required: true,
-    },
-    {
       name: "imageAlt",
       type: "string",
-      required: true,
     },
     {
       name: "imagePosition",
@@ -272,6 +262,16 @@ Builder.registerComponent(CardWide, {
     {
       name: "showButton",
       type: "boolean",
+    },
+    {
+      name: "titleText",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: "string",
+      enum: ["info", "success", "warning"],
     },
   ],
 });
