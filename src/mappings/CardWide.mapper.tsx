@@ -38,7 +38,7 @@ export default figmaMapping({
       showButton={figma["Show Button"] ?? false}
       showBarIcon={figma["Show Bar + Icon"] ?? false}
       imagePosition={imagePosition}
-      imageUrl={figma.$findOneByName("ContentLayout").$imageUrl} // Default empty as not provided in Figma structure
+      imageUrl={figma.$findOneByName("ContentLayout")?.$imageUrl} // Default empty as not provided in Figma structure
       imageAlt={figma["Headline Text"] ?? ""} // Default empty as not provided in Figma structure
         buttonText={buttonText}
       />

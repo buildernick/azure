@@ -10,8 +10,8 @@ interface CardWideProps {
   bodyText: string;
   showButton?: boolean;
   showBarIcon?: boolean;
-  imageUrl: string;
-  imageAlt: string;
+  imageUrl?: string;
+  imageAlt?: string;
   buttonText?: string;
   className?: string;
 }
