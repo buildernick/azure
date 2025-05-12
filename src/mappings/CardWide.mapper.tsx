@@ -17,7 +17,7 @@ interface FigmaCardWProps extends BaseFigmaProps {
 
 // Read more at https://www.builder.io/c/docs/mapping-functions
 export default figmaMapping({
-  componentName: "CardW",
+  componentName: "CardWide",
   componentKey: "654bc0fe8013ec5cb06c0879c83fead1f33f428f",
   mapper(figma: FigmaCardWProps) {
     // Extract image URL from Icon Instance if present
@@ -32,7 +32,7 @@ export default figmaMapping({
         buttonText={figma["Button Text"] ?? ""}
         titleText={figma["Title"] ?? ""}
         bodyText={figma["Body"] ?? ""}
-        imageUrl={imageUrl}
+        imageUrl={figma.$findOneByName("Illustration")?.$imageUrl}
         imageAlt={figma["Title"] ?? "Card image"} // Using title as alt text
         variant="info" // Default variant
         imagePosition="left" // Default position
