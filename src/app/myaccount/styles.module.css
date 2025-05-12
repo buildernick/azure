@@ -139,6 +139,18 @@
   flex-wrap: wrap;
 }
 
+.wideCardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.wideCardGrid > * {
+  flex: 1;
+  min-width: 410px;
+}
+
 .setupCard {
   flex: 1;
   min-width: 240px;
@@ -333,8 +345,14 @@
     width: 100%;
   }
 
-  .cardGrid {
+  .cardGrid,
+  .wideCardGrid {
     flex-direction: column;
+  }
+
+  .wideCardGrid > * {
+    width: 100%;
+    min-width: 100%;
   }
 
   .setupCard,
