@@ -348,6 +348,141 @@ const MainContent = () => {
           />
         </div>
       </div>
+
+      {/* App Library Section */}
+      <div className={`${styles.appsSectionContainer} ${darkClass}`}>
+        <div className={styles.appsSectionHeader}>
+          <div className={styles.appsSectionTitle}>App library</div>
+          <div className={styles.settingsButtonContainer}>
+            <div className={styles.settingsButton}>
+              <i className="ti ti-settings" />
+              <div className={styles.settingsText}>Settings</div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.appsGrid}>
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/8586dac3f51d21799453554910a6210202f683e8?placeholderIfAbsent=true"
+            imageAlt="Excel"
+            text="Excel"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6435efcdae4c7a10d1d53faf124ed34832eeeff1?placeholderIfAbsent=true"
+            imageAlt="Adobe Identity Manager"
+            text="Adobe Identity Manager"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ab839e9daa4bfd004b7f480c4c13425607464211?placeholderIfAbsent=true"
+            imageAlt="Adobe Creative Cloud"
+            text="Adobe Creative Cloud"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/4d60e12ef214b692a9bdfe08537560bdf843ccae?placeholderIfAbsent=true"
+            imageAlt="Slack"
+            text="Slack"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/27076ac9b393ca4da9502d3cedb90bdbbe06bf65?placeholderIfAbsent=true"
+            imageAlt="Google Drive"
+            text="Google Drive"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/7750db64b26e644cedf512db9d8dffcb0dd21891?placeholderIfAbsent=true"
+            imageAlt="SharePoint"
+            text="SharePoint"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/51c7c83a26855cda081581322586a95d4a9908a1?placeholderIfAbsent=true"
+            imageAlt="OneDrive"
+            text="OneDrive"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/44f34e51eae7f0af0c727c1fe45300c7f6dc3981?placeholderIfAbsent=true"
+            imageAlt="Dropbox Business"
+            text="Dropbox Business"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/cfea527b7fe5f6f0803c7d4dd01e856ac40c7113?placeholderIfAbsent=true"
+            imageAlt="Asana"
+            text="Asana"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/aa67f1cb5926c5cd81a8001769ae292cbcf973d8?placeholderIfAbsent=true"
+            imageAlt="Trello"
+            text="Trello"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/43d8a1a56d1035301e590e3d1a14055fd2afeb94?placeholderIfAbsent=true"
+            imageAlt="Zoom"
+            text="Zoom"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/ff2e3579c5d6f4c2015486ee4b0518659254ae5c?placeholderIfAbsent=true"
+            imageAlt="Adobe Acrobat"
+            text="Adobe Acrobat"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/e398bc402a598123a4e0ab658a6cf07033a6ffaf?placeholderIfAbsent=true"
+            imageAlt="Power BI"
+            text="Power BI"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/6bd78e80bca1e0bf38f7c0cbd9f1aaaa84edb637?placeholderIfAbsent=true"
+            imageAlt="Power Apps"
+            text="Power Apps"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+          <Tile
+            imageUrl="https://cdn.builder.io/api/v1/image/assets/375626aef9734fa5a388227cc2b6eab1/dfc89189c8fb4319d632e3f1efb0e026925245d7?placeholderIfAbsent=true"
+            imageAlt="Power Automate"
+            text="Power Automate"
+            showMenu={true}
+            showInfo={true}
+            className={styles.appTile}
+          />
+        </div>
+      </div>
     </>
   );
 };
